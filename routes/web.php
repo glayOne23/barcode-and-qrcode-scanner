@@ -12,7 +12,15 @@
 */
 
 Route::get('/', function () {
-    return view('barcode.scan');
+    return redirect('members/');
+});
+
+Route::get('/scan-barcode', function () {
+    return view('scan_barcode');
+});
+
+Route::get('/scan-qrcode', function () {
+    return view('scan_qrcode');
 });
 
 

@@ -1,7 +1,7 @@
 @extends('layout.layout')
 @section('content')
     <div class="card" style="color:black;">
-        <div class="card-body">
+        <div class="card-body table-responsive">
             <div class="row">
                 <div class="col-md-8">
                     <h4 class="card-title">List of Member</h4>
@@ -13,7 +13,7 @@
                     </button>
                 </div>
             </div>
-            <h6 class="card-subtitle mb-2 text-muted"></h6>
+            
             <table class="table">
                 <thead>
                 <tr>
@@ -36,8 +36,12 @@
                             <td>{{$member->data["name"]}}</td>
                             <td>{{$member->data["status"]}}</td>
                             <td>{{$member->data["email"]}}</td>                            
-                            <td>{!!'<img src="'. DNS1D::getBarcodePNGPath($member->data["id"], "C128B") . '" alt="barcode"   />'!!}</td>
-                            <td class="btn-outline-success">coming soon</td>
+                            <td>
+                                {!!'<img src="'. DNS1D::getBarcodePNGPath($member->data["id"], "C128B") . '" alt="barcode"   />'!!}
+                            </td>
+                            <td>
+                                <img src="data:image/png;base64, {!! base64_encode(QrCode::format('png')->size(150)->generate($member->data["id"])) !!} ">
+                            </td>
                             <td>
                                 <a class="btn btn-outline-warning mr-2" href="{{ route( 'members.edit', ['member' => $member->id] ) }}"><i class="fas fa-edit"></i></a>
                                 <form method="POST" action=" {{ route( 'members.destroy',['member' => $member->id] ) }} " style="display: inline;">

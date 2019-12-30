@@ -14,13 +14,13 @@ class MembersController extends Controller
     public function index()
     {
         $members = Member::all();
-        return view('barcode.member.index', compact('members'));
+        return view('member.index', compact('members'));
     }
     
 
     public function create()
     {
-        // return view('barcode.member.create');
+        // return view('member.create');
     }
     
 
@@ -50,7 +50,7 @@ class MembersController extends Controller
     
     public function edit(Member $member)
     {
-        return view('barcode.member.edit', compact('member'));
+        return view('member.edit', compact('member'));
     }
 
     

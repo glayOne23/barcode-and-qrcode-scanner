@@ -24,7 +24,7 @@
 </head>
 <body>
     @include('layout.navbar')
-    <div class="container mb-3">
+    <div class="container-fluid mb-3">
         @yield('content')
     </div>
 
