@@ -1,5 +1,5 @@
 # barcode-and-qrcode-scanner
-This repository consists of barcode scanner, QRcode scanner, and barcode and QRcode generator that will generate automatically when data available. The data added using excel
+This repository consists of barcode scanner, QRcode scanner, and barcode and QRcode generator that will generate automatically when data available. The data is added using excel
 ## Tools Used
 - [Maatwebsite/Laravel-Excel](https://github.com/Maatwebsite/Laravel-Excel)
 - [milon/barcode](https://github.com/milon/barcode)
